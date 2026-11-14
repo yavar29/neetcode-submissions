@@ -1,0 +1,19 @@
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        #DP
+        #FIND NUMBER OF DISTINC WAYS TO CLIMB FROM STAIR 1 AND MOVE UPWARD
+
+        if n<=2:
+            return n
+
+        first = 1
+        second = 2
+        
+        
+        for i in range(3,n+1):
+            temp = first + second
+            first = second
+            second = temp
+
+        return second
+            
